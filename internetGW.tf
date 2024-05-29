@@ -5,3 +5,7 @@ resource "aws_internet_gateway" "Tapplent_igw" {
     Name = "Tapplent_igw"
   }
 }
+
+output "TAP-IGW" {
+  value = aws_internet_gateway.Tapplent_igw.id
+}

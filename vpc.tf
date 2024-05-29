@@ -1,7 +1,11 @@
 resource "aws_vpc" "Tapplent" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.aws_vpcId
   
   tags = {
     Name = "Tapplent"
   }
+}
+
+output "Tapplent1" {
+  value = aws_vpc.Tapplent.id
 }

@@ -20,11 +20,11 @@ resource "aws_route_table" "Tap-Private-Route" {
 }
 
 resource "aws_route_table_association" "public" {
-  subnet_id      = aws_subnet.Public-Subnet1.id
+  subnet_id      = aws_subnet.Public-Subnet1[count.index].id
   route_table_id = aws_route_table.Tap-Public-Route.id
 }
 
 resource "aws_route_table_association" "private" {
-  subnet_id      = aws_subnet.Private-Subnet1.id
+  subnet_id      = aws_subnet.Private-Subnet1[count.index].id
   route_table_id = aws_route_table.Tap-Private-Route.id
 }

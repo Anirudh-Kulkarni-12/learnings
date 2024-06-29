@@ -17,13 +17,10 @@ resource "aws_instance" "Test_Server" {
 
 resource "aws_key_pair" "Devops123" {
     key_name = "Devops123"
-    public_key = file(
-    )
-  
+    public_key = file()
 }
 
 output "Server" {
     value = aws_instance.Test_Server.id
   
 }
-
